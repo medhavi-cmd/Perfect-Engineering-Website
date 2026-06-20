@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-navy: #06265c;
+  --color-brand-blue: #0b3d91;
+  --color-brand-light: #eaf2ff;
+  --color-brand-slate: #5d6470;
+  --color-brand-dark: #061a3b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #0b1d3a;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #0b3d91;
+  color: white;
+}
+
+.section-padding {
+  padding: 6rem 1.5rem;
+}
+
+.container-custom {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(11, 61, 145, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 61, 145, 0.06) 1px, transparent 1px);
+  background-size: 38px 38px;
+}
+
+.hero-overlay {
+  background:
+    linear-gradient(90deg, rgba(6, 26, 59, 0.96) 0%, rgba(6, 26, 59, 0.82) 45%, rgba(6, 26, 59, 0.3) 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #ffffff 0%, #bcd5ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.marquee-track {
+  width: max-content;
+  animation: marquee 22s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
